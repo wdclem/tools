@@ -1,6 +1,9 @@
 #!/bin/bash
 # Script to delete the .ssh directory
 
+RED='\033[0;31m'
+NC='\033[0m'
+
 if [ -d "$HOME/.ssh" ]; then
     rm -rf "$HOME/.ssh"
   
