@@ -1,12 +1,11 @@
 #!/bin/bash
-# Script to delete the .ssh directory
+# Script to delete the .ssh directory and confirm its deletion
 
+# ANSI color codes for red text
 RED='\033[0;31m'
-NC='\033[0m'
+NC='\033[0m' 
 
-if [ -d "$HOME/.ssh" ]; then
-    rm -rf "$HOME/.ssh"
-  
+# Check if the .ssh directory exists
 if [ -d "$HOME/.ssh" ]; then
     rm -rf "$HOME/.ssh"
     echo ".ssh directory deleted"
@@ -16,7 +15,7 @@ fi
 
 # Confirm the deletion by listing the contents of the home directory
 echo "Current contents of the home directory:"
-ls -la $HOME/
+ls -la "$HOME/"
 
 # Check if .ssh directory still exists
 if [ -d "$HOME/.ssh" ]; then
