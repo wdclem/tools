@@ -13,5 +13,11 @@ fi
 
 # Confirm the deletion by listing the contents of the home directory
 echo "Current contents of the home directory:"
-ls -la $HOME/  echo ".ssh directory deleted"
+ls -la $HOME/
+
+# Check if .ssh directory still exists
+if [ -d "$HOME/.ssh" ]; then
+    echo -e "${RED}Danger: .ssh directory still exists${NC}"
+else
+    echo ".ssh directory successfully removed"
 fi
